@@ -1,0 +1,904 @@
+/* Base Styles */
+:root {
+  --primary-color: #2e7acb;
+  --secondary-color: #ffdd59;
+  --text-color: #333;
+  --light-bg: #f8f9fa;
+  --dark-bg: #2c3e50;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  background: linear-gradient(135deg, var(--primary-color), #578FCA);
+  color: #fff;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Simple Clean Style (Removed Glassmorphism) */
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.navbar nav {
+  display: flex;
+}
+
+.navbar nav a {
+  margin: 0 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+  color: var(--secondary-color);
+}
+
+.mobile-menu-btn {
+  display: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary-color), #578FCA);
+  padding: 2rem;
+}
+
+/* Contact Page Hero */
+.hero.contact-hero {
+  background: linear-gradient(135deg, rgba(46, 122, 203, 0.9), rgba(87, 143, 202, 0.9)), 
+              url('../images/contact-bg.jpg') center/cover no-repeat;
+}
+
+/* Rental Page Hero */
+.hero.rental-hero {
+  background: linear-gradient(135deg, rgba(46, 122, 203, 0.9), rgba(87, 143, 202, 0.9));
+}
+
+.hero-content {
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+/* Button Styles */
+.btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #fff;
+  color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background: var(--secondary-color);
+  color: #000;
+}
+
+.btn-secondary {
+  background: #ffe600;
+  color: #000;
+}
+
+.btn-secondary:hover {
+  background: #fff200;
+}
+
+/* Card Styles */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+/* Section Styles */
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+}
+
+/* Specific sections with blue background */
+.hero,
+.map-section {
+  background: linear-gradient(135deg, var(--primary-color), #578FCA);
+  color: #fff;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: var(--light-bg);
+}
+
+/* Packages Section */
+.packages {
+  background-color: var(--light-bg);
+}
+
+/* About Section */
+.about {
+  background-color: var(--light-bg);
+}
+
+/* Timeline Section */
+.timeline-section {
+  background-color: var(--light-bg);
+}
+
+/* Rent Section */
+.rent-section {
+  background-color: var(--light-bg);
+}
+
+.rental-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ride-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.ride-option {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ride-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.ride-option.active {
+  border-color: var(--secondary-color);
+  background: white;
+}
+
+.ride-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.ride-icon span {
+  font-size: 2.5rem;
+  vertical-align: middle;
+}
+
+.ride-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-top: 0.5rem;
+}
+
+.rental-form {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.result {
+  display: none;
+  background: var(--light-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.result-details {
+  margin: 1.5rem 0;
+}
+
+.total-cost {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0.5rem 0;
+}
+
+.checkout-form {
+  display: none;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+/* Features Section */
+.features-section {
+  background-color: var(--light-bg);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Contact Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Contact Info */
+.contact-info {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: justify;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h2 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  text-align: justify;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.contact-info .info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info .info-icon {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-right: 1rem;
+  margin-top: 0.3rem;
+}
+
+.contact-info .info-item h3 {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 0.3rem;
+}
+
+.contact-info .info-item p {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+/* Contact Form */
+.contact-form {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form h2 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: justify;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  text-align: justify;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: justify;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(46, 122, 203, 0.1);
+}
+
+textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Map Section */
+.map-section {
+  padding: 0 0 5rem;
+}
+
+.map-section iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+/* About Page Specific Styles */
+.about .about-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  line-height: 1.8;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.about-content strong {
+  color: var(--secondary-color);
+}
+
+.highlight-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 500px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.highlight-card:hover {
+  transform: scale(1.05);
+}
+
+.highlight-card i {
+  font-size: 3rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.highlight-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.highlight-card p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+/* Timeline (About Page) */
+.timeline-section {
+  position: relative;
+  margin-top: 3rem;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem 0;
+  max-width: 800px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+  background: white;
+  border-radius: 10px;
+  margin: 1rem 0;
+  box-sizing: border-box;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: var(--secondary-color);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(odd)::before {
+  right: -12px;
+}
+
+.timeline-item:nth-child(even)::before {
+  left: -12px;
+}
+
+.timeline-year {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.timeline-content h3 {
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+  color: var(--text-color);
+}
+
+.timeline-content p {
+  font-size: 1rem;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+/* Ride Image and Description */
+.ride-img {
+  margin: 5px;
+  border: none;
+  float: left;
+  width: 180px;
+  height: auto;
+}
+
+.desc {
+  padding: 10px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: left;
+}
+
+/* Checkout Form */
+.checkout-section {
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 600px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.checkout-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.checkout-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.checkout-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.checkout-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(46, 122, 203, 0.1);
+}
+
+.checkout-form button {
+  padding: 0.8rem;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.checkout-form button:hover {
+  background: var(--secondary-color);
+  color: #000;
+}
+
+/* Packages Section */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.package-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.package-card:hover {
+  transform: scale(1.05);
+}
+
+.package-header {
+  margin-bottom: 1rem;
+}
+
+.package-header h3 {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.package-price {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+.package-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.package-features li {
+  margin: 0.5rem 0;
+  color: var(--text-color);
+}
+
+.package-features i {
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+}
+
+.package-badge {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: #000;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* FAQ Section */
+.faq-grid {
+  display: grid;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.faq-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* Footer */
+footer {
+  background: var(--dark-bg);
+  color: #fff;
+  padding: 3rem 0 0;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links a {
+  color: #ecf0f1;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--secondary-color);
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: var(--secondary-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  .navbar nav.active {
+    display: flex;
+  }
+
+  .navbar nav a {
+    color: #333;
+    padding: 0.5rem 2rem;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info, .contact-form, .rent-section, .checkout-section {
+    padding: 1.5rem;
+  }
+
+  .ride-options {
+    grid-template-columns: 1fr;
+  }
+
+  .ride-option {
+    padding: 1rem;
+  }
+
+  .rental-form {
+    padding: 1.5rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-links {
+    align-items: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    text-align: left;
+    padding-left: 50px;
+  }
+
+  .timeline-item::before {
+    left: 8px !important;
+    right: auto !important;
+  }
+}

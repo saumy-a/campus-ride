@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rent a Ride - Campus Ride</title>
+  <link rel="stylesheet" href="style0.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>Campus Ride</h1>
+    <nav>
+      <a href="index0.html">Home</a>
+      <a href="about0.html">About</a>
+      <a href="rental0.html" class="active">Rent</a>
+      <a href="packages0.html">Packages</a>
+      <a href="contact0.html">Contact</a>
+    </nav>
+    <div class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+
+  <section class="hero rental-hero">
+    <div class="container">
+      <div class="hero-content glass" data-aos="fade-up">
+        <h1>Rent a Ride</h1>
+        <p>Choose your perfect vehicle for campus transportation</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section rent-section">
+    <div class="container">
+      <div class="rental-container" data-aos="fade-up">
+        <div class="ride-options">
+          <div class="ride-option active" data-ride="cycle" data-rate="2">
+            <div class="ride-icon">
+              <span>🚲</span>
+            </div>
+            <h3>Cycle</h3>
+            <div class="ride-price">$2/hour</div>
+          </div>
+          <div class="ride-option" data-ride="ebike" data-rate="4">
+            <div class="ride-icon">
+              <span>⚡</span>
+            </div>
+            <h3>E-Bike</h3>
+            <div class="ride-price">$4/hour</div>
+          </div>
+          <div class="ride-option" data-ride="scooter" data-rate="5">
+            <div class="ride-icon">
+              <span>🛵</span>
+            </div>
+            <h3>Scooter</h3>
+            <div class="ride-price">$5/hour</div>
+          </div>
+        </div>
+
+        <div class="rental-form">
+          <div class="form-group">
+            <label for="hours">Rental Duration (hours)</label>
+            <input type="number" id="hours" min="1" value="1" class="form-control">
+          </div>
+          <button id="calculateBtn" class="btn btn-primary">Calculate Cost</button>
+          <div class="result" id="result">
+            <h3>Your Rental Estimate</h3>
+            <div class="result-details">
+              <p id="rideTypeText">Cycle for 1 hour</p>
+              <div class="total-cost" id="totalCost">$2</div>
+            </div>
+            <button id="rentNowBtn" class="btn btn-secondary">Rent Now</button>
+          </div>
+          <div class="checkout-form" id="checkoutForm">
+            <h3>Complete Your Rental</h3>
+            <div class="form-group">
+              <input type="text" id="fullName" class="form-control" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="studentId" class="form-control" placeholder="Student/Staff ID" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="phone" class="form-control" placeholder="Phone Number" required>
+            </div>
+            <button id="confirmRentalBtn" class="btn btn-primary">Confirm Rental</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section features-section">
+    <div class="container">
+      <h2>Why Choose Campus Ride?</h2>
+      <div class="features-grid">
+        <div class="feature-card" data-aos="fade-up">
+          <div class="feature-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3>Eco-Friendly</h3>
+          <p>Zero-emission vehicles for a greener campus</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>Fast Charging</h3>
+          <p>Quick battery swaps for electric vehicles</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Safety First</h3>
+          <p>Helmets and safety training included</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Campus Ride</div>
+      <div class="footer-links">
+        <a href="index0.html">Home</a>
+        <a href="about0.html">About</a>
+        <a href="rental0.html">Rent</a>
+        <a href="packages0.html">Packages</a>
+        <a href="contact0.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Campus Ride. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const rideOptions = document.querySelectorAll('.ride-option');
+      const calculateBtn = document.getElementById('calculateBtn');
+      const rentNowBtn = document.getElementById('rentNowBtn');
+      const confirmRentalBtn = document.getElementById('confirmRentalBtn');
+      const resultSection = document.getElementById('result');
+      const checkoutForm = document.getElementById('checkoutForm');
+
+      let selectedRide = {
+        type: 'cycle',
+        rate: 2,
+        displayName: 'Cycle'
+      };
+
+      rideOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          rideOptions.forEach(opt => opt.classList.remove('active'));
+          this.classList.add('active');
+
+          selectedRide = {
+            type: this.dataset.ride,
+            rate: parseInt(this.dataset.rate),
+            displayName: this.querySelector('h3').textContent
+          };
+
+          if (resultSection.style.display === 'block') {
+            calculateCost();
+          }
+        });
+      });
+
+      calculateBtn.addEventListener('click', calculateCost);
+
+      function calculateCost() {
+        const hours = parseInt(document.getElementById('hours').value) || 1;
+        const totalCost = selectedRide.rate * hours;
+
+        document.getElementById('rideTypeText').textContent = 
+          `${selectedRide.displayName} for ${hours} hour${hours !== 1 ? 's' : ''}`;
+        document.getElementById('totalCost').textContent = `$${totalCost}`;
+
+        resultSection.style.display = 'block';
+        resultSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      rentNowBtn.addEventListener('click', function() {
+        checkoutForm.style.display = 'block';
+        checkoutForm.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      confirmRentalBtn.addEventListener('click', confirmRental);
+
+      function confirmRental() {
+        const name = document.getElementById('fullName').value.trim();
+        const id = document.getElementById('studentId').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+
+        if (!validateForm(name, id, email, phone)) return;
+
+        console.log('Rental confirmed:', {
+          rideType: selectedRide.type,
+          hours: parseInt(document.getElementById('hours').value) || 1,
+          customer: { name, id, email, phone }
+        });
+
+        alert(`Rental confirmed!\n\n${selectedRide.displayName} for ${document.getElementById('hours').value} hour(s)\nTotal: ${document.getElementById('totalCost').textContent}\n\nThank you, ${name}!`);
+
+        resetRentalForm();
+      }
+
+      function validateForm(name, id, email, phone) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRegex = /^[0-9]{10,}$/;
+
+        if (!name || !id || !email || !phone) {
+          alert('Please fill in all required fields.');
+          return false;
+        }
+
+        if (!emailRegex.test(email)) {
+          alert('Please enter a valid email address.');
+          return false;
+        }
+
+        if (!phoneRegex.test(phone)) {
+          alert('Please enter a valid 10-digit phone number.');
+          return false;
+        }
+
+        return true;
+      }
+
+      function resetRentalForm() {
+        document.getElementById('hours').value = '1';
+        document.getElementById('fullName').value = '';
+        document.getElementById('studentId').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('phone').value = '';
+        resultSection.style.display = 'none';
+        checkoutForm.style.display = 'none';
+
+        rideOptions.forEach(opt => opt.classList.remove('active'));
+        document.querySelector('.ride-option[data-ride="cycle"]').classList.add('active');
+        selectedRide = {
+          type: 'cycle',
+          rate: 2,
+          displayName: 'Cycle'
+        };
+      }
+    });
+  </script>
+</body>
+</html>
