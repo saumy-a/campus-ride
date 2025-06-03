@@ -441,7 +441,7 @@ textarea.form-control {
 
 /* Map Section */
 .map-section {
-  padding: 0 0 5rem;
+  padding: auto;
 }
 
 .map-section iframe {
