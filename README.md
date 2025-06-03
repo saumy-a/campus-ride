@@ -1,6 +1,6 @@
 # 🚲 Campus Ride - Campus Transportation System
 
-![Project Preview](assets/images/screenshot.png)
+
 
 A modern, eco-friendly transportation solution for university campuses offering cycle, e-bike, and scooter rentals with an intuitive booking system.
 
