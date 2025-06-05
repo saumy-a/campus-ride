@@ -1,14 +1,18 @@
-/* Modern Educational Design System */
+/* Modern Educational Design System with Vibrant Colors */
 :root {
-  --primary: #4A90E2;
-  --secondary: #F39C12;
-  --accent: #E74C3C;
-  --background: #F5F6FA;
-  --text: #2C3E50;
+  --primary: #6C63FF;
+  --secondary: #FF6B6B;
+  --accent1: #4ECDC4;
+  --accent2: #FFD93D;
+  --accent3: #FF8F8F;
+  --background: #F8F9FE;
+  --text: #2D3436;
   --white: #FFFFFF;
-  --card-bg: #FFFFFF;
-  --gradient: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --dark: #1A1A1A;
+  --gradient1: linear-gradient(135deg, #6C63FF 0%, #4834DF 100%);
+  --gradient2: linear-gradient(135deg, #FF6B6B 0%, #EE5253 100%);
+  --gradient3: linear-gradient(135deg, #4ECDC4 0%, #45B7AF 100%);
+  --shadow: 0 10px 30px rgba(108, 99, 255, 0.1);
 }
 
 * {
@@ -28,9 +32,10 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
 }
 
-/* Modern Navbar */
+/* Modern Navbar with Gradient */
 .navbar {
   background: var(--white);
   padding: 1rem 2rem;
@@ -48,9 +53,9 @@ body {
 }
 
 .navbar h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  background: var(--gradient);
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--gradient1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -63,23 +68,41 @@ body {
 .navbar nav a {
   color: var(--text);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
 }
 
-.navbar nav a:hover,
+.navbar nav a:hover {
+  background: var(--gradient1);
+  color: var(--white);
+}
+
 .navbar nav a.active {
-  color: var(--primary);
+  background: var(--gradient1);
+  color: var(--white);
 }
 
-/* Hero Section */
+/* Hero Section with Dynamic Background */
 .hero {
-  padding: 10rem 0 6rem;
-  background: var(--gradient);
+  padding: 12rem 0 8rem;
+  background: var(--gradient1);
   color: var(--white);
   position: relative;
   overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover;
+  opacity: 0.1;
 }
 
 .hero::after {
@@ -89,30 +112,30 @@ body {
   left: -10%;
   width: 120%;
   height: 100%;
-  background: var(--white);
+  background: var(--background);
   transform: rotate(-3deg);
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 700px;
+  max-width: 800px;
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: 4.5rem;
   line-height: 1.2;
   margin-bottom: 1.5rem;
   font-weight: 800;
 }
 
 .hero p {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   margin-bottom: 2.5rem;
   opacity: 0.9;
 }
 
-/* Features Section */
+/* Features Section with Cards */
 .features {
   padding: 8rem 0;
   background: var(--white);
@@ -126,32 +149,42 @@ body {
 }
 
 .feature {
-  background: var(--card-bg);
-  border-radius: 1.5rem;
-  padding: 2.5rem;
-  transition: transform 0.3s ease;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  transition: all 0.3s ease;
   box-shadow: var(--shadow);
+  border: 2px solid transparent;
 }
 
 .feature:hover {
   transform: translateY(-10px);
+  border-color: var(--primary);
 }
 
 .feature-icon {
-  color: var(--primary);
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 1.5rem;
+  background: var(--gradient1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .feature h3 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
   color: var(--text);
 }
 
-/* Vehicles Section */
+.feature p {
+  color: var(--text);
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+/* Vehicles Section with Hover Effects */
 .vehicles {
-  padding: 6rem 0;
+  padding: 8rem 0;
   background: var(--background);
 }
 
@@ -162,48 +195,91 @@ body {
 }
 
 .card {
-  background: var(--card-bg);
-  border-radius: 1.5rem;
-  padding: 2.5rem;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 3rem 2rem;
   text-align: center;
   transition: all 0.3s ease;
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.card:hover::before {
+  opacity: 0.1;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 40px rgba(108, 99, 255, 0.2);
 }
 
 .card-icon {
-  font-size: 3.5rem;
+  font-size: 4rem;
   margin-bottom: 1.5rem;
   display: block;
+  position: relative;
+  z-index: 2;
 }
 
 .card h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--text);
+  position: relative;
+  z-index: 2;
 }
 
 .card p {
   color: var(--text);
   opacity: 0.8;
   font-size: 1.1rem;
+  position: relative;
+  z-index: 2;
 }
 
-/* Buttons */
+/* Modern Buttons */
 .btn {
   display: inline-block;
-  padding: 1.2rem 2.5rem;
+  padding: 1.2rem 3rem;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-decoration: none;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.btn:hover::before {
+  transform: translateX(0);
 }
 
 .btn-primary {
@@ -213,27 +289,41 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
 }
 
-/* Footer */
+/* Footer with Modern Design */
 footer {
-  background: var(--text);
+  background: var(--dark);
   color: var(--white);
-  padding: 5rem 0 2rem;
+  padding: 6rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary) 0%, transparent 100%);
+  opacity: 0.05;
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 4rem;
+  position: relative;
 }
 
 .footer-logo {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 800;
   margin-bottom: 1rem;
-  background: var(--gradient);
+  background: var(--gradient1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -248,12 +338,15 @@ footer {
   color: var(--white);
   text-decoration: none;
   opacity: 0.8;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
   font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .footer-links a:hover {
   opacity: 1;
+  transform: translateX(10px);
+  color: var(--accent2);
 }
 
 .footer-social {
@@ -271,6 +364,7 @@ footer {
 .footer-social a:hover {
   opacity: 1;
   transform: translateY(-3px);
+  color: var(--accent2);
 }
 
 .footer-bottom {
@@ -315,7 +409,7 @@ footer {
   }
   
   .hero h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
   }
   
   .footer-content {
@@ -327,4 +421,64 @@ footer {
   .footer-social {
     justify-content: center;
   }
+  
+  .footer-links a:hover {
+    transform: translateX(0);
+  }
+}
+
+/* Animation Classes */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 2px solid rgba(108, 99, 255, 0.1);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: var(--white);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.1);
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: var(--gradient1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: var(--text);
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
 }
