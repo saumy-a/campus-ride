@@ -3,108 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Campus Ride - Smart Campus Transportation</title>
+  <title>Campus Ride</title>
   <link rel="stylesheet" href="style0.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="navbar">
-    <div class="container">
-      <h1>Campus Ride</h1>
-      <nav>
-        <a href="index0.html" class="active">Home</a>
-        <a href="about0.html">About</a>
-        <a href="rental0.html">Rent</a>
-        <a href="packages0.html">Packages</a>
-        <a href="contact0.html">Contact</a>
-      </nav>
-      <div class="mobile-menu-btn">
-        <i class="fas fa-bars"></i>
-      </div>
+    <h1>Campus Ride</h1>
+    <nav>
+      <a href="index0.html" class="active">Home</a>
+      <a href="about0.html">About</a>
+      <a href="rental0.html">Rent</a>
+      <a href="packages0.html">Packages</a>
+      <a href="contact0.html">Contact</a>
+    </nav>
+    <div class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
     </div>
   </header>
 
   <section class="hero">
     <div class="container">
-      <div class="hero-content" data-aos="fade-up">
-        <h1>Transform Your Campus Journey</h1>
-        <p>Experience the future of campus mobility with our smart, sustainable transportation solutions.</p>
-        <a href="rental0.html" class="btn btn-primary">Get Started Now</a>
+      <div class="hero-content glass" data-aos="fade-up">
+        <h1>Welcome to Campus Ride</h1>
+        <p>Ride around campus with ease and style</p>
+        <a href="rental0.html" class="btn btn-primary">Rent Now</a>
       </div>
     </div>
   </section>
 
-  <section class="features">
+  <section class="section">
     <div class="container">
-      <div class="features-grid">
-        <div class="feature" data-aos="fade-up">
-          <i class="fas fa-leaf feature-icon"></i>
-          <h3>Eco-Friendly Mobility</h3>
-          <p>Join our green initiative with zero-emission vehicles that help reduce your carbon footprint while getting around campus efficiently.</p>
-        </div>
-        <div class="feature" data-aos="fade-up" data-aos-delay="100">
-          <i class="fas fa-bolt feature-icon"></i>
-          <h3>Smart Technology</h3>
-          <p>Experience seamless rides with our smart booking system, GPS tracking, and contactless payments for maximum convenience.</p>
-        </div>
-        <div class="feature" data-aos="fade-up" data-aos-delay="200">
-          <i class="fas fa-shield-alt feature-icon"></i>
-          <h3>Safe & Reliable</h3>
-          <p>Your safety is our priority. All vehicles undergo regular maintenance and sanitization to ensure a worry-free journey.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="vehicles">
-    <div class="container">
+      <h2>Our Rides</h2>
       <div class="card-container">
         <div class="card" data-aos="fade-up">
           <span class="card-icon">🚲</span>
-          <h3>Smart Bikes</h3>
-          <p>Advanced bikes equipped with smart locks and GPS tracking for convenient short-distance travel.</p>
+          <h3>Cycle</h3>
+          <p>Perfect for a leisurely ride around campus.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="100">
           <span class="card-icon">⚡</span>
-          <h3>E-Bikes</h3>
-          <p>Power-assisted bikes for effortless rides, perfect for longer distances and hilly terrain.</p>
+          <h3>E-Bike</h3>
+          <p>Get around faster with our electric bikes.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="200">
           <span class="card-icon">🛵</span>
-          <h3>E-Scooters</h3>
-          <p>Modern electric scooters combining speed, style, and sustainability for quick campus commutes.</p>
+          <h3>Scooter</h3>
+          <p>Zip through campus with our scooters.</p>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div>
-          <div class="footer-logo">Campus Ride</div>
-          <p>Revolutionizing campus transportation with smart, sustainable solutions.</p>
-        </div>
-        <div class="footer-links">
-          <a href="index0.html">Home</a>
-          <a href="about0.html">About</a>
-          <a href="rental0.html">Rent</a>
-          <a href="packages0.html">Packages</a>
-          <a href="contact0.html">Contact</a>
-        </div>
-        <div>
-          <div class="footer-social">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
+    <div class="footer-content">
+      <div class="footer-logo">Campus Ride</div>
+      <div class="footer-links">
+        <a href="index0.html">Home</a>
+        <a href="about0.html">About</a>
+        <a href="rental0.html">Rent</a>
+        <a href="packages0.html">Packages</a>
+        <a href="contact0.html">Contact</a>
       </div>
-      <div class="footer-bottom">
-        © 2025 Campus Ride. All rights reserved.
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Campus Ride. All rights reserved.
     </div>
   </footer>
 
@@ -114,11 +83,6 @@
       duration: 800,
       easing: 'ease-in-out',
       once: true
-    });
-
-    // Mobile menu toggle
-    document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
-      document.querySelector('nav').classList.toggle('active');
     });
   </script>
 </body>
